@@ -6,7 +6,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.graphics.GL20
 import java.util.Calendar
 import com.badlogic.gdx.graphics.Color
-import sun.awt.resources.awt
 
 class ClockWidget {
   val fontFile = Gdx.files.internal("jackinput.ttf")
