@@ -22,7 +22,8 @@ class ClockWidget {
   }
 
   def getColor(hour:Int):Color = {
-    val c = java.awt.Color.getHSBColor(hour/100f + 0.3f, 1, 1)
+    val h = 1 - (hour/100f + 0.3f)
+    val c = java.awt.Color.getHSBColor(h, 1, 1)
     val r = c.getRed / 255f
     val b = c.getBlue / 255f
     val g = c.getGreen / 255f
@@ -32,6 +33,7 @@ class ClockWidget {
 
   def getDrawable:(Color,String) = {
     val cal = Calendar.getInstance()
+    cal.set(Calendar.HOUR, -6)
     val day = cal.get(Calendar.DAY_OF_YEAR)
     val dayName = if (day == 366) {
       dayNames.last
@@ -60,7 +62,7 @@ class ClockWidget {
 
     batch.begin()
     val (color, text) = getDrawable
-    font.setColor(color)
+    font.setColor(color.add(0.3f,0.3f,0.3f,0))
     font.draw(batch, text, 10, size)
     batch.end()
   }
