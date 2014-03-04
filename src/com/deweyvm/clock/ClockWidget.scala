@@ -33,7 +33,6 @@ class ClockWidget {
 
   def getDrawable:(Color,String) = {
     val cal = Calendar.getInstance()
-    cal.set(Calendar.HOUR, -6)
     val day = cal.get(Calendar.DAY_OF_YEAR)
     val dayName = if (day == 366) {
       dayNames.last
