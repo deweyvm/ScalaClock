@@ -64,5 +64,6 @@ class ClockWidget {
     font.setColor(color.add(0.3f,0.3f,0.3f,0))
     font.draw(batch, text, 10, size)
     batch.end()
+    Thread.sleep(32)
   }
 }
